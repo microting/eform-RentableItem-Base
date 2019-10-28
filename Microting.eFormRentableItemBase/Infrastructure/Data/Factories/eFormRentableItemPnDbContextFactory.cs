@@ -21,10 +21,11 @@ SOFTWARE.
 using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace Microting.eFormRentableItemBase.Infrastructure.Data.Factories
 {
-    public class eFormRentableItemPnDbContextFactory
+    public class eFormRentableItemPnDbContextFactory : IDesignTimeDbContextFactory<eFormRentableItemPnDbContext>
     {
         public eFormRentableItemPnDbContext CreateDbContext(string[] args)
         {
