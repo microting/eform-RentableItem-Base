@@ -86,6 +86,14 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<string> modelNames = new List<string>();
             modelNames.Add("PluginConfigurationValueVersions");
             modelNames.Add("PluginConfigurationValues");
+            modelNames.Add("Contract");
+            modelNames.Add("ContractVersion");
+            modelNames.Add("ContractInspection");
+            modelNames.Add("ContractInspectionVersion");
+            modelNames.Add("ContractRentableItem");
+            modelNames.Add("ContractRentableItemVersion");
+            modelNames.Add("RentableItem");
+            modelNames.Add("RentableItemsVersion");
 
             foreach (var modelName in modelNames)
             {
