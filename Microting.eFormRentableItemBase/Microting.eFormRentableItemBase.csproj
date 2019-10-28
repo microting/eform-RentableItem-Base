@@ -5,7 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Infrastructure\Data\Entities" />
       <Folder Include="Migrations" />
     </ItemGroup>
 

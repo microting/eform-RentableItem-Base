@@ -21,6 +21,7 @@ SOFTWARE.
 using Microsoft.EntityFrameworkCore;
 using Microting.eFormApi.BasePn.Abstractions;
 using Microting.eFormApi.BasePn.Infrastructure.Database.Entities;
+using Microting.eFormRentableItemBase.Infrastructure.Data.Entities;
 
 namespace Microting.eFormRentableItemBase.Infrastructure.Data
 {
@@ -34,5 +35,13 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data
         public DbSet<PluginConfigurationValueVersion> PluginConfigurationValueVersions { get; set; }
         public DbSet<PluginPermission> PluginPermissions { get; set; }
         public DbSet<PluginGroupPermission> PluginGroupPermissions { get; set; }
+        public DbSet<Contract> Contract { get; set; }
+        public DbSet<ContractVersion> ContractVersion { get; set; }
+        public DbSet<ContractInspection> ContractInspection { get; set; }
+        public DbSet<ContractInspectionVersion> ContractInspectionVersion { get; set; }
+        public DbSet<RentableItem> RentableItem { get; set; }
+        public DbSet<RentableItemVersion> RentableItemsVersion { get; set; }
+        public DbSet<ContractRentableItem> ContractRentableItem { get; set; }
+        public DbSet<ContractRentableItemVersion> ContractRentableItemVersion { get; set; }
     }
 }
