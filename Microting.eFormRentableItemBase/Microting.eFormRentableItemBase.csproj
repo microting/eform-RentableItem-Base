@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Infrastructure\Data\Entities" />
+      <Folder Include="Migrations" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
+      <PackageReference Include="Microting.eForm" Version="3.0.333" />
+      <PackageReference Include="Microting.eFormApi.BasePn" Version="1.1.190" />
+    </ItemGroup>
+
+</Project>
