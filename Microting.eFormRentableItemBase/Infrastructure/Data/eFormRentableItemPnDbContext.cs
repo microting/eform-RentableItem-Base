@@ -35,6 +35,7 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data
         public DbSet<PluginConfigurationValueVersion> PluginConfigurationValueVersions { get; set; }
         public DbSet<PluginPermission> PluginPermissions { get; set; }
         public DbSet<PluginGroupPermission> PluginGroupPermissions { get; set; }
+        public DbSet<PluginGroupPermissionVersion> PluginGroupPermissionVersions { get; set; }
         public DbSet<Contract> Contract { get; set; }
         public DbSet<ContractVersion> ContractVersion { get; set; }
         public DbSet<ContractInspection> ContractInspection { get; set; }
