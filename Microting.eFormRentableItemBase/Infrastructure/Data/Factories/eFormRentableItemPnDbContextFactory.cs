@@ -46,7 +46,7 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Factories
                 throw new ArgumentNullException("Connection string not present");
             }
 //            optionsBuilder.UseSqlServer(@"data source=(LocalDb)\SharedInstance;Initial catalog=eform-rentable-item-base;Integrated Security=True");
-//            dotnet ef migrations add AddingSdkCaseId --project Microting.eFormCaseTemplateBase --startup-project DBMigrator
+//            dotnet ef migrations add AddingSdkCaseId --project Microting.eFormRentableItemBase --startup-project DBMigrator
             optionsBuilder.UseLazyLoadingProxies(true);
             return new eFormRentableItemPnDbContext(optionsBuilder.Options);
         }

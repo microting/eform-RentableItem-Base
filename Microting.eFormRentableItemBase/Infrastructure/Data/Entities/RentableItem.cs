@@ -28,6 +28,8 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Entities
         public string SerialNumber { get; set; }
 
         public string PlateNumber { get; set; }
+        
+        public int eFormId { get; set; }
 
         public virtual ICollection<ContractRentableItem> ContractRentableItems { get; set; }
 
@@ -61,7 +63,8 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Entities
             rentableItem.VinNumber = VinNumber;
             rentableItem.SerialNumber = SerialNumber;
             rentableItem.PlateNumber = PlateNumber;
-
+            rentableItem.eFormId = eFormId;
+            
             if (dbContext.ChangeTracker.HasChanges())
             {
                 rentableItem.UpdatedAt = DateTime.Now;
