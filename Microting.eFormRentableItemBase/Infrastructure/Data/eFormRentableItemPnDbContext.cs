@@ -44,5 +44,7 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data
         public DbSet<RentableItemVersion> RentableItemsVersion { get; set; }
         public DbSet<ContractRentableItem> ContractRentableItem { get; set; }
         public DbSet<ContractRentableItemVersion> ContractRentableItemVersion { get; set; }
+        public DbSet<ContractInspectionItem> ContractInspectionItem { get; set; }
+        public DbSet<ContractInspectionItemVersion> ContractInspectionItemVersion { get; set; }
     }
 }

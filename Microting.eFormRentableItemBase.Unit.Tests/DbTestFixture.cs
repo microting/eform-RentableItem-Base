@@ -90,6 +90,8 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             modelNames.Add("ContractVersion");
             modelNames.Add("ContractInspection");
             modelNames.Add("ContractInspectionVersion");
+            modelNames.Add("ContractInspectionItem");
+            modelNames.Add("ContractInspectionItemVersion");
             modelNames.Add("ContractRentableItem");
             modelNames.Add("ContractRentableItemVersion");
             modelNames.Add("RentableItem");

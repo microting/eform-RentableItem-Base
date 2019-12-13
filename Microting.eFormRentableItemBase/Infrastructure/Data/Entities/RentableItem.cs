@@ -114,7 +114,8 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Entities
                 UpdatedByUserId = rentableItem.UpdatedByUserId,
                 Version = rentableItem.Version,
                 WorkflowState = rentableItem.WorkflowState,
-                RentableItemId = rentableItem.Id
+                RentableItemId = rentableItem.Id,
+                eFormID = rentableItem.eFormId
             };
 
             return rentableItemVersion;

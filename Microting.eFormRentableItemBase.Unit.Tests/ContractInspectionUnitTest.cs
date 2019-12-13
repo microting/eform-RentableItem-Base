@@ -31,9 +31,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             {
                 ContractId = contract.Id,
                 DoneAt = DateTime.Now,
-                SDKCaseId = rnd.Next(1, 255),
-                SiteId = rnd.Next(1, 255),
-                Status = rnd.Next(1, 255)
+                
             };
             //Act
             await contractInspection.Create(DbContext);
@@ -50,9 +48,6 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             Assert.AreEqual(1, versionList.Count());
 
             Assert.AreEqual(contractInspection.ContractId, dbContractInspection.ContractId);
-            Assert.AreEqual(contractInspection.SDKCaseId, dbContractInspection.SDKCaseId);
-            Assert.AreEqual(contractInspection.SiteId, dbContractInspection.SiteId);
-            Assert.AreEqual(contractInspection.Status, dbContractInspection.Status);
             Assert.AreEqual(contractInspection.DoneAt.ToString(), dbContractInspection.DoneAt.ToString());
             Assert.AreEqual(contractInspection.WorkflowState, dbContractInspection.WorkflowState);
         }
@@ -85,17 +80,13 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             {
                 ContractId = contract.Id,
                 DoneAt = DateTime.Now,
-                SDKCaseId = rnd.Next(1, 255),
-                SiteId = rnd.Next(1, 255),
-                Status = rnd.Next(1, 255)
+                
             };            
             await contractInspection.Create(DbContext);
 
             contractInspection.ContractId = contract2.Id;
             contractInspection.DoneAt = DateTime.Now.AddDays(1);
-            contractInspection.SDKCaseId = rnd.Next(1, 255);
-            contractInspection.Status = rnd.Next(1, 255);
-            contractInspection.SiteId = rnd.Next(1, 255);
+           
             //Act
             await contractInspection.Update(DbContext);
 
@@ -111,8 +102,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             Assert.AreEqual(2, versionList.Count());
 
             Assert.AreEqual(contractInspection.ContractId, dbContractInspection.ContractId);
-            Assert.AreEqual(contractInspection.SDKCaseId, dbContractInspection.SDKCaseId);
-            Assert.AreEqual(contractInspection.Status, dbContractInspection.Status);
+  
             Assert.AreEqual(contractInspection.DoneAt.ToString(), dbContractInspection.DoneAt.ToString());
             Assert.AreEqual(contractInspection.WorkflowState, dbContractInspection.WorkflowState);
         }
@@ -136,9 +126,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             {
                 ContractId = contract.Id,
                 DoneAt = DateTime.Now,
-                SDKCaseId = rnd.Next(1, 255),
-                SiteId = rnd.Next(1, 255),
-                Status = rnd.Next(1, 255)
+              
             };            
             await contractInspection.Create(DbContext);
 
@@ -158,8 +146,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             Assert.AreEqual(2, versionList.Count());
 
             Assert.AreEqual(contractInspection.ContractId, dbContractInspection.ContractId);
-            Assert.AreEqual(contractInspection.SDKCaseId, dbContractInspection.SDKCaseId);
-            Assert.AreEqual(contractInspection.Status, dbContractInspection.Status);
+           
             Assert.AreEqual(contractInspection.DoneAt.ToString(), dbContractInspection.DoneAt.ToString());
             Assert.AreEqual(Constants.WorkflowStates.Removed, dbContractInspection.WorkflowState);
         }

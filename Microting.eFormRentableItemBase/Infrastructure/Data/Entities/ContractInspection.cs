@@ -10,16 +10,12 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Entities
 {
     public class ContractInspection : BaseEntity
     {
-        public int? Status { get; set; }
         
         public DateTime? DoneAt { get; set; }
 
         [ForeignKey("Contract")]
         public int ContractId { get; set; }
-
-        public int SDKCaseId { get; set; }
-
-        public int SiteId { get; set; }
+        
 
         public virtual Contract Contract { get; set; }
 
@@ -47,10 +43,8 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Entities
                 throw new NullReferenceException($"Could not find Contract Inspection with id {Id}");
             }
 
-            contractInspection.Status = Status;
             contractInspection.DoneAt = DoneAt;
-            contractInspection.SiteId = SiteId;
-            contractInspection.SDKCaseId = SDKCaseId;
+           
 
             if (dbContext.ChangeTracker.HasChanges())
             {
@@ -93,9 +87,6 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Entities
             contractInspectionVer.CreatedAt = contractInspection.CreatedAt;
             contractInspectionVer.CreatedByUserId = contractInspection.CreatedByUserId;
             contractInspectionVer.DoneAt = contractInspection.DoneAt;
-            contractInspectionVer.SDKCaseId = contractInspection.SDKCaseId;
-            contractInspectionVer.Status = contractInspection.Status;
-            contractInspectionVer.SiteId = contractInspection.SiteId;
             contractInspectionVer.UpdatedAt = contractInspection.UpdatedAt;
             contractInspectionVer.UpdatedByUserId = contractInspection.UpdatedByUserId;
             contractInspectionVer.Version = contractInspection.Version;

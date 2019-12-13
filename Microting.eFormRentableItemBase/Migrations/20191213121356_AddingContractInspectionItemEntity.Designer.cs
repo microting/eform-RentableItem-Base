@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microting.eFormRentableItemBase.Infrastructure.Data;
 
 namespace Microting.eFormRentableItemBase.Migrations
 {
     [DbContext(typeof(eFormRentableItemPnDbContext))]
-    partial class eFormRentableItemPnDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191213121356_AddingContractInspectionItemEntity")]
+    partial class AddingContractInspectionItemEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             string autoIDGenStrategy = "SqlServer:ValueGenerationStrategy";

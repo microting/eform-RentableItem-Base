@@ -21,6 +21,8 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Entities
 
         public string PlateNumber { get; set; }
 
+        public int eFormID { get; set; }
+        
         [ForeignKey("RentableItem")]
         public int RentableItemId { get; set; }
     }
