@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
@@ -9,10 +9,12 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
-      <PackageReference Include="Microting.eForm" Version="3.3.14" />
-      <PackageReference Include="Microting.eFormApi.BasePn" Version="1.2.78" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.6" />
+        <PackageReference Include="Microting.eForm" Version="4.0.3-beta" />
+        <PackageReference Include="Microting.eFormApi.BasePn" Version="2.0.1-beta" />
     </ItemGroup>
 
 </Project>
