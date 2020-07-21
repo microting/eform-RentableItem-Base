@@ -7,6 +7,7 @@ addons:
   chrome: stable
   mariadb: '10.5'
 script:
+  - sudo mysql -e 'ALTER USER root@localhost IDENTIFIED VIA mysql_native_password'
   - dotnet restore
   - dotnet build Microting.eFormRentableItemBase.sln
   - dotnet test -v n Microting.eFormRentableItemBase.Unit.Tests/Microting.eFormRentableItemBase.Unit.Tests.csproj
