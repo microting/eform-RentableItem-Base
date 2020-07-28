@@ -29,26 +29,13 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Factories
     {
         public eFormRentableItemPnDbContext CreateDbContext(string[] args)
         {
+            var defaultCs = "Server = localhost; port = 3306; Database = rentableitem-pn; user = root; Convert Zero Datetime = true;";
             var optionsBuilder = new DbContextOptionsBuilder<eFormRentableItemPnDbContext>();
-            if (args.Any())
-            {
-                if (args.FirstOrDefault().ToLower().Contains("convert zero datetime"))
-                {
-                    optionsBuilder.UseMySql(args.FirstOrDefault());
-                }
-                else
-                {
-                    optionsBuilder.UseSqlServer(args.FirstOrDefault());
-                }
-            }
-            else
-            {
-                throw new ArgumentNullException("Connection string not present");
-            }
-//            optionsBuilder.UseSqlServer(@"data source=(LocalDb)\SharedInstance;Initial catalog=eform-rentable-item-base;Integrated Security=True");
-//            dotnet ef migrations add AddingSdkCaseId --project Microting.eFormRentableItemBase --startup-project DBMigrator
+            optionsBuilder.UseMySql(args.Any() ? args[0]: defaultCs);
             optionsBuilder.UseLazyLoadingProxies(true);
+
             return new eFormRentableItemPnDbContext(optionsBuilder.Options);
+            // dotnet ef migrations add AddingSdkCaseId --project Microting.eFormRentableItemBase --startup-project DBMigrator
         }
     }
 }
