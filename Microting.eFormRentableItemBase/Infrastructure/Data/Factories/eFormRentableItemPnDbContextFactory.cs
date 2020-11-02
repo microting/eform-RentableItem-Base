@@ -30,7 +30,7 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Factories
     {
         public eFormRentableItemPnDbContext CreateDbContext(string[] args)
         {
-            var defaultCs = "Server = localhost; port = 3306; Database = rentableitem-pn; user = root; Convert Zero Datetime = true;";
+            var defaultCs = "Server = localhost; port = 3306; Database = rentableitem-pn; user = root; password = secretpassword; Convert Zero Datetime = true;";
             var optionsBuilder = new DbContextOptionsBuilder<eFormRentableItemPnDbContext>();
             optionsBuilder.UseMySql(args.Any() ? args[0] : defaultCs, mysqlOptions =>
             {

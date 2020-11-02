@@ -53,7 +53,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             }
             else
             {
-                _connectionString = @"Server = localhost; port = 3306; Database = eform-rentable-items-base-tests; user = root; Convert Zero Datetime = true;";
+                _connectionString = @"Server = localhost; port = 3306; Database = eform-rentable-items-base-tests; user = root; password = secretpassword; Convert Zero Datetime = true;";
             }
 
             GetContext(_connectionString);
