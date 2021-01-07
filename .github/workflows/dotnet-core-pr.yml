@@ -1,7 +1,7 @@
 name: .NET Core
 
 on:
-  push:
+  pull_request:
     branches: [ master, stable ]
 
 jobs:
@@ -37,13 +37,3 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Unit Tests
       run: dotnet test --no-restore -c Release -v n Microting.eFormRentableItemBase.Unit.Tests/Microting.eFormRentableItemBase.Unit.Tests.csproj
-    - name: Notify slack fail
-      if: ${{ failure() }}
-      env:
-        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-      uses: voxmedia/github-action-slack-notify-build@v1
-      with:
-        message_id: ${{ steps.slack.outputs.message_id }}
-        channel_id: C01J0AUCP2A
-        status: FAILED
-        color: danger
