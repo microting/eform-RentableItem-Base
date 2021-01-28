@@ -16,29 +16,31 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
         public async Task Contract_Create_DoesCreate()
         {
             //Arrange
-            Contract contract = new Contract();
             Random rnd = new Random();
             DateTime contractEnd = DateTime.Now;
             DateTime contractStart = DateTime.Now;
-            contract.Status = 66;
-            contract.ContractEnd = contractEnd;
-            contract.ContractNr = rnd.Next(1, 255);
-            contract.ContractStart = contractStart;
-            contract.CustomerId = rnd.Next(1, 255);
-            
+            Contract contract = new Contract
+            {
+                Status = 66,
+                ContractEnd = contractEnd,
+                ContractNr = rnd.Next(1, 255),
+                ContractStart = contractStart,
+                CustomerId = rnd.Next(1, 255)
+            };
+
             //Act
             await contract.Create(DbContext);
 
             Contract dbContract = DbContext.Contract.AsNoTracking().First();
             List<Contract> contractList = DbContext.Contract.AsNoTracking().ToList();
             List<ContractVersion> versionList = DbContext.ContractVersion.AsNoTracking().ToList();
-            
+
             //Assert
             Assert.NotNull(dbContract);
-            
+
             Assert.AreEqual(1, contractList.Count);
             Assert.AreEqual(1, versionList.Count);
-            
+
             Assert.AreEqual(contract.Status, dbContract.Status);
             Assert.AreEqual(contract.ContractEnd.ToString(), dbContract.ContractEnd.ToString());
             Assert.AreEqual(contract.ContractNr, dbContract.ContractNr);
@@ -50,36 +52,38 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
         public async Task Contract_Update_DoesUpdate()
         {
             //Arrange
-            Contract contract = new Contract();
             Random rnd = new Random();
             DateTime contractEnd = DateTime.Now;
             DateTime contractStart = DateTime.Now;
-            contract.Status = 66;
-            contract.ContractEnd = contractEnd;
-            contract.ContractNr = rnd.Next(1, 255);
-            contract.ContractStart = contractStart;
-            contract.CustomerId = rnd.Next(1, 255);
+            Contract contract = new Contract
+            {
+                Status = 66,
+                ContractEnd = contractEnd,
+                ContractNr = rnd.Next(1, 255),
+                ContractStart = contractStart,
+                CustomerId = rnd.Next(1, 255)
+            };
             await contract.Create(DbContext);
-            
+
             contract.Status = 100;
             contract.ContractEnd = DateTime.Now;
             contract.ContractNr = rnd.Next(1, 255);
             contract.ContractStart = DateTime.Now;
             contract.CustomerId = rnd.Next(1, 255);
-            
+
             //Act
             await contract.Update(DbContext);
-            
+
             Contract dbContract = DbContext.Contract.AsNoTracking().First();
             List<Contract> contractList = DbContext.Contract.AsNoTracking().ToList();
             List<ContractVersion> versionList = DbContext.ContractVersion.AsNoTracking().ToList();
-            
+
             //Assert
             Assert.NotNull(dbContract);
-            
+
             Assert.AreEqual(1, contractList.Count);
             Assert.AreEqual(2, versionList.Count);
-            
+
             Assert.AreEqual(contract.Status, dbContract.Status);
             Assert.AreEqual(contract.ContractEnd.ToString(), dbContract.ContractEnd.ToString());
             Assert.AreEqual(contract.ContractNr, dbContract.ContractNr);
@@ -91,30 +95,32 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
         public async Task Contract_Delete_DoesDelete()
         {
             //Arrange
-            Contract contract = new Contract();
             Random rnd = new Random();
             DateTime contractEnd = DateTime.Now;
             DateTime contractStart = DateTime.Now;
-            contract.Status = 66;
-            contract.ContractEnd = contractEnd;
-            contract.ContractNr = rnd.Next(1, 255);
-            contract.ContractStart = contractStart;
-            contract.CustomerId = rnd.Next(1, 255);
+            Contract contract = new Contract
+            {
+                Status = 66,
+                ContractEnd = contractEnd,
+                ContractNr = rnd.Next(1, 255),
+                ContractStart = contractStart,
+                CustomerId = rnd.Next(1, 255)
+            };
             await contract.Create(DbContext);
 
             //Act
             await contract.Delete(DbContext);
-            
+
             Contract dbContract = DbContext.Contract.AsNoTracking().First();
             List<Contract> contractList = DbContext.Contract.AsNoTracking().ToList();
             List<ContractVersion> versionList = DbContext.ContractVersion.AsNoTracking().ToList();
-            
+
             //Assert
             Assert.NotNull(dbContract);
-            
+
             Assert.AreEqual(1, contractList.Count);
             Assert.AreEqual(2, versionList.Count);
-            
+
             Assert.AreEqual(contract.Status, dbContract.Status);
             Assert.AreEqual(contract.ContractEnd.ToString(), dbContract.ContractEnd.ToString());
             Assert.AreEqual(contract.ContractNr, dbContract.ContractNr);

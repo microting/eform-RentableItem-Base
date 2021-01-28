@@ -36,7 +36,6 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Factories
             {
                 mysqlOptions.ServerVersion(new Version(10, 4, 0), ServerType.MariaDb);
             });
-            optionsBuilder.UseLazyLoadingProxies(true);
 
             return new eFormRentableItemPnDbContext(optionsBuilder.Options);
             // dotnet ef migrations add AddingSdkCaseId --project Microting.eFormRentableItemBase --startup-project DBMigrator

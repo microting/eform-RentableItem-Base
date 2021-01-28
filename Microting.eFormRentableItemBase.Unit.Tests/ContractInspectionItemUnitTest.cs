@@ -16,15 +16,17 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
         public async Task ContractInspectionItem_Create_DoesCreate()
         {
             //Arrange
-            Contract contract = new Contract();
             Random rnd = new Random();
             DateTime contractEnd = DateTime.Now;
             DateTime contractStart = DateTime.Now;
-            contract.Status = 66;
-            contract.ContractEnd = contractEnd;
-            contract.ContractNr = rnd.Next(1, 255);
-            contract.ContractStart = contractStart;
-            contract.CustomerId = rnd.Next(1, 255);
+            Contract contract = new Contract
+            {
+                Status = 66,
+                ContractEnd = contractEnd,
+                ContractNr = rnd.Next(1, 255),
+                ContractStart = contractStart,
+                CustomerId = rnd.Next(1, 255)
+            };
             await contract.Create(DbContext);
 
             RentableItem rentableItem = new RentableItem
@@ -37,12 +39,12 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 SerialNumber = Guid.NewGuid().ToString(),
                 eFormId = rnd.Next(1, 255)
             };
-            
+
             ContractInspection contractInspection = new ContractInspection
             {
                 ContractId = contract.Id,
                 DoneAt = DateTime.Now,
-               
+
             };
             await contractInspection.Create(DbContext);
 
@@ -54,7 +56,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 SiteId = rnd.Next(1, 999999),
                 Status = 66
             };
-            
+
             //Act
             await inspectionItem.Create(DbContext);
 
@@ -64,7 +66,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 await DbContext.ContractInspectionItem.AsNoTracking().ToListAsync();
             List<ContractInspectionItemVersion> versionList =
                 await DbContext.ContractInspectionItemVersion.AsNoTracking().ToListAsync();
-            
+
             //Assert
             Assert.NotNull(dbInspectionItem);
             Assert.NotNull(inspectionItems);
@@ -76,27 +78,31 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             Assert.AreEqual(inspectionItem.SDKCaseId, dbInspectionItem.SDKCaseId);
             Assert.AreEqual(inspectionItem.SiteId, dbInspectionItem.SiteId);
         }
-        
+
         [Test]
         public async Task ContractInspectionItem_Update_DoesUpdate()
         {
             //Arrange
-            Contract contract = new Contract();
             Random rnd = new Random();
             DateTime contractEnd = DateTime.Now;
             DateTime contractStart = DateTime.Now;
-            contract.Status = 66;
-            contract.ContractEnd = contractEnd;
-            contract.ContractNr = rnd.Next(1, 255);
-            contract.ContractStart = contractStart;
-            contract.CustomerId = rnd.Next(1, 255);
+            Contract contract = new Contract
+            {
+                Status = 66,
+                ContractEnd = contractEnd,
+                ContractNr = rnd.Next(1, 255),
+                ContractStart = contractStart,
+                CustomerId = rnd.Next(1, 255)
+            };
             await contract.Create(DbContext);
-            Contract contract2 = new Contract();
-            contract.Status = 100;
-            contract.ContractEnd = contractEnd;
-            contract.ContractNr = rnd.Next(1, 255);
-            contract.ContractStart = contractStart;
-            contract.CustomerId = rnd.Next(1, 255);
+            Contract contract2 = new Contract()
+            {
+                Status = 100,
+                ContractEnd = contractEnd,
+                ContractNr = rnd.Next(1, 255),
+                ContractStart = contractStart,
+                CustomerId = rnd.Next(1, 255)
+            };
             await contract2.Create(DbContext);
 
             RentableItem rentableItem = new RentableItem
@@ -109,7 +115,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 SerialNumber = Guid.NewGuid().ToString(),
                 eFormId = rnd.Next(1, 255)
             };
-            RentableItem rentbaleItem2 = new RentableItem
+            RentableItem rentableItem2 = new RentableItem
             {
                 Brand = Guid.NewGuid().ToString(),
                 ModelName = Guid.NewGuid().ToString(),
@@ -118,7 +124,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 PlateNumber = Guid.NewGuid().ToString(),
                 RegistrationDate = DateTime.Now.AddDays(1)
             };
-            
+
             ContractInspection contractInspection = new ContractInspection
             {
                 ContractId = contract.Id,
@@ -131,7 +137,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 ContractId = contract2.Id,
                 DoneAt = DateTime.Now.AddDays(1)
             };
-            
+
             ContractInspectionItem inspectionItem = new ContractInspectionItem
             {
                 ContractInspectionId = contractInspection.Id,
@@ -146,17 +152,17 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             inspectionItem.SDKCaseId = rnd.Next(1, 255);
             inspectionItem.SiteId = rnd.Next(1, 255);
             inspectionItem.ContractInspectionId = contractInspection2.Id;
-            inspectionItem.RentableItemId = rentbaleItem2.Id;
+            inspectionItem.RentableItemId = rentableItem2.Id;
             //Act
             await inspectionItem.Update(DbContext);
-            
+
             ContractInspectionItem dbInspectionItem =
                 await DbContext.ContractInspectionItem.AsNoTracking().FirstAsync();
             List<ContractInspectionItem> inspectionItems =
                 await DbContext.ContractInspectionItem.AsNoTracking().ToListAsync();
             List<ContractInspectionItemVersion> versionList =
                 await DbContext.ContractInspectionItemVersion.AsNoTracking().ToListAsync();
-            
+
             //Assert
             Assert.NotNull(dbInspectionItem);
             Assert.NotNull(inspectionItems);
@@ -173,15 +179,17 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
         public async Task ContractInspectionItem_Delete_DoesDelete()
         {
                  //Arrange
-            Contract contract = new Contract();
             Random rnd = new Random();
             DateTime contractEnd = DateTime.Now;
             DateTime contractStart = DateTime.Now;
-            contract.Status = 66;
-            contract.ContractEnd = contractEnd;
-            contract.ContractNr = rnd.Next(1, 255);
-            contract.ContractStart = contractStart;
-            contract.CustomerId = rnd.Next(1, 255);
+            Contract contract = new Contract
+            {
+                Status = 66,
+                ContractEnd = contractEnd,
+                ContractNr = rnd.Next(1, 255),
+                ContractStart = contractStart,
+                CustomerId = rnd.Next(1, 255)
+            };
             await contract.Create(DbContext);
 
             RentableItem rentableItem = new RentableItem
@@ -194,12 +202,12 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 SerialNumber = Guid.NewGuid().ToString(),
                 eFormId = rnd.Next(1, 255)
             };
-            
+
             ContractInspection contractInspection = new ContractInspection
             {
                 ContractId = contract.Id,
                 DoneAt = DateTime.Now,
-               
+
             };
             await contractInspection.Create(DbContext);
 
@@ -221,7 +229,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 await DbContext.ContractInspectionItem.AsNoTracking().ToListAsync();
             List<ContractInspectionItemVersion> versionList =
                 await DbContext.ContractInspectionItemVersion.AsNoTracking().ToListAsync();
-            
+
             //Assert
             Assert.NotNull(dbInspectionItem);
             Assert.NotNull(inspectionItems);
