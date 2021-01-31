@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microting.eForm.Infrastructure.Constants;
@@ -95,7 +94,7 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 CustomerId = rnd.Next(1, 255)
             };
             await contract.Create(DbContext);
-            Contract contract2 = new Contract()
+            Contract contract2 = new Contract
             {
                 Status = 100,
                 ContractEnd = contractEnd,

@@ -12,7 +12,7 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Entities
     {
         public RentableItem()
         {
-            this.ContractRentableItems = new HashSet<ContractRentableItem>();
+            ContractRentableItems = new HashSet<ContractRentableItem>();
         }
 
         [StringLength(100)]

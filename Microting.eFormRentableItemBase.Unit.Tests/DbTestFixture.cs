@@ -21,7 +21,7 @@ SOFTWARE.
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
+using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microting.eFormRentableItemBase.Infrastructure.Data;
 using Microting.eFormRentableItemBase.Infrastructure.Data.Factories;
@@ -120,8 +120,8 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
 
         private void ClearFile()
         {
-            _path = System.Reflection.Assembly.GetExecutingAssembly().CodeBase;
-            _path = System.IO.Path.GetDirectoryName(_path)?.Replace(@"file:\", "");
+            _path = Assembly.GetExecutingAssembly().CodeBase;
+            _path = Path.GetDirectoryName(_path)?.Replace(@"file:\", "");
 
             string picturePath = _path + @"\output\dataFolder\picture\Deleted";
 

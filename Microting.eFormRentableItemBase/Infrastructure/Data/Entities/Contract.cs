@@ -11,7 +11,7 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Entities
     {
         public Contract()
         {
-            this.ContractInspections = new HashSet<ContractInspection>();
+            ContractInspections = new HashSet<ContractInspection>();
         }
         
         public int? Status { get; set; }
