@@ -134,7 +134,10 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                     file.Delete();
                 }
             }
-            catch { }
+            catch
+            {
+                // ignored
+            }
         }
 
         protected virtual void DoSetup() { }

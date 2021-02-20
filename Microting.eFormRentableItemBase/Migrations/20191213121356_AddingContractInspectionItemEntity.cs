@@ -9,7 +9,7 @@ namespace Microting.eFormRentableItemBase.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             string autoIDGenStrategy = "SqlServer:ValueGenerationStrategy";
-            object autoIDGenStrategyValue= SqlServerValueGenerationStrategy.IdentityColumn;
+            object autoIDGenStrategyValue= MySqlValueGenerationStrategy.IdentityColumn;
 
             // Setup for MySQL Provider
             if (migrationBuilder.ActiveProvider=="Pomelo.EntityFrameworkCore.MySql")
