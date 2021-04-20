@@ -12,7 +12,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.8" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.8" />
-        <PackageReference Include="Microting.eForm" Version="4.4.1" />
+        <PackageReference Include="Microting.eForm" Version="4.4.37" />
         <PackageReference Include="Microting.eFormApi.BasePn" Version="2.0.97" />
     </ItemGroup>
 
