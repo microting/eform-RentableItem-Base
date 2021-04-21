@@ -1,5 +1,18 @@
 # Changelog
 
+## [v2.1.1](https://github.com/microting/eform-RentableItem-Base/tree/v2.1.1) (2021-04-21)
+
+[Full Changelog](https://github.com/microting/eform-RentableItem-Base/compare/v2.1.0...v2.1.1)
+
+**Implemented enhancements:**
+
+- Bump Microting.eFormApi.BasePn from 2.0.97 to 2.1.0 [\#109](https://github.com/microting/eform-RentableItem-Base/issues/109)
+- Bump Microting.eForm from 4.4.1 to 4.5.0 [\#108](https://github.com/microting/eform-RentableItem-Base/issues/108)
+
+## [v2.1.0](https://github.com/microting/eform-RentableItem-Base/tree/v2.1.0) (2021-04-21)
+
+[Full Changelog](https://github.com/microting/eform-RentableItem-Base/compare/v2.0.45...v2.1.0)
+
 ## [v2.0.45](https://github.com/microting/eform-RentableItem-Base/tree/v2.0.45) (2021-02-20)
 
 [Full Changelog](https://github.com/microting/eform-RentableItem-Base/compare/v2.0.44...v2.0.45)
