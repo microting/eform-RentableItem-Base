@@ -32,7 +32,7 @@ namespace Microting.eFormRentableItemBase.Infrastructure.Data.Factories
         {
             var defaultCs = "Server = localhost; port = 3306; Database = rentableitem-pn; user = root; password = secretpassword; Convert Zero Datetime = true;";
             var optionsBuilder = new DbContextOptionsBuilder<eFormRentableItemPnDbContext>();
-            optionsBuilder.UseMySql(args.Any() ? args[0] : defaultCs,, new MariaDbServerVersion(
+            optionsBuilder.UseMySql(args.Any() ? args[0] : defaultCs, new MariaDbServerVersion(
                 new Version(10, 4, 0)), mySqlOptionsAction: builder =>
             {
                 builder.EnableRetryOnFailure();
