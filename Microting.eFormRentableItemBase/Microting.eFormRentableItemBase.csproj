@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         <PackageIcon>icon.png</PackageIcon>
     </PropertyGroup>
 
@@ -10,9 +10,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.14" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.14" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.14" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.5" />
         <PackageReference Include="Microting.eForm" Version="4.5.0" />
         <PackageReference Include="Microting.eFormApi.BasePn" Version="2.1.0" />
     </ItemGroup>
