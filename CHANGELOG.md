@@ -1,5 +1,13 @@
 # Changelog
 
+## [v3.0.26](https://github.com/microting/eform-RentableItem-Base/tree/v3.0.26) (2021-09-03)
+
+[Full Changelog](https://github.com/microting/eform-RentableItem-Base/compare/v3.0.25...v3.0.26)
+
+**Implemented enhancements:**
+
+- Bump Microting.eFormApi.BasePn from 3.0.43 to 3.0.44 [\#215](https://github.com/microting/eform-RentableItem-Base/issues/215)
+
 ## [v3.0.25](https://github.com/microting/eform-RentableItem-Base/tree/v3.0.25) (2021-08-17)
 
 [Full Changelog](https://github.com/microting/eform-RentableItem-Base/compare/v3.0.24...v3.0.25)
@@ -127,7 +135,6 @@
 
 - Bump NUnit3TestAdapter from 3.17.0 to 4.0.0 [\#155](https://github.com/microting/eform-RentableItem-Base/pull/155) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.NET.Test.Sdk from 16.9.4 to 16.10.0 [\#143](https://github.com/microting/eform-RentableItem-Base/pull/143) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump Microsoft.NET.Test.Sdk from 16.6.1 to 16.8.3 [\#2](https://github.com/microting/eform-RentableItem-Base/pull/2) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
 
 ## [v3.0.12](https://github.com/microting/eform-RentableItem-Base/tree/v3.0.12) (2021-07-05)
 
@@ -273,6 +280,10 @@
 ## [v2.0.44](https://github.com/microting/eform-RentableItem-Base/tree/v2.0.44) (2021-01-11)
 
 [Full Changelog](https://github.com/microting/eform-RentableItem-Base/compare/v2.0.43...v2.0.44)
+
+**Merged pull requests:**
+
+- Bump Microsoft.NET.Test.Sdk from 16.6.1 to 16.8.3 [\#2](https://github.com/microting/eform-RentableItem-Base/pull/2) ([dependabot-preview[bot]](https://github.com/apps/dependabot-preview))
 
 ## [v2.0.43](https://github.com/microting/eform-RentableItem-Base/tree/v2.0.43) (2021-01-07)
 
