@@ -17,7 +17,7 @@
         </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.13" />
         <PackageReference Include="Microting.eForm" Version="7.0.75" />
-        <PackageReference Include="Microting.eFormApi.BasePn" Version="7.0.60" />
+        <PackageReference Include="Microting.eFormApi.BasePn" Version="7.0.61" />
     </ItemGroup>
 
     <ItemGroup>
