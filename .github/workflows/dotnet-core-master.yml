@@ -12,41 +12,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: mirromutth/mysql-action@v1.1
-      with:
-        host port: 3306 # Optional, default value is 3306. The port of host
-        container port: 3306 # Optional, default value is 3306. The port of container
-        character set server: 'utf8' # Optional, default value is 'utf8mb4'. The '--character-set-server' option for mysqld
-        collation server: 'utf8_general_ci' # Optional, default value is 'utf8mb4_general_ci'. The '--collation-server' option for mysqld
-        mysql version: '8.0' # Optional, default value is "latest". The version of the MySQL
-        mysql database: 'some_test' # Optional, default value is "test". The specified database which will be create
-        mysql root password: 'secretpassword'
-        mysql user: 'developer' # Required if "mysql root password" is empty, default is empty. The superuser for the specified database. Can use secrets, too
-        mysql password: 'password' # Required if "mysql user" exists. The password for the "mysql user"
-    - uses: getong/rabbitmq-action@v1.2
-      with:
-        rabbitmq version: '3.8.2-management-alpine'
-        host port: 5672
-        rabbitmq user: 'admin'
-        rabbitmq password: 'password'
-        rabbitmq vhost: 'vhost_name'
+    - name: Start MariaDB
+      run: |
+        docker pull mariadb:10.8
+        docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=secretpassword -p 3306:3306 -d mariadb:10.8
+    - name: Sleep 15 seconds
+      run: sleep 15
+    - name: Start rabbitmq
+      run: |
+        docker pull rabbitmq:latest
+        docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=password -p5672:5672 rabbitmq:latest
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 7.0.x
+        dotnet-version: 8.0.x
     - name: Install dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Unit Tests
       run: dotnet test --no-restore -c Release -v n Microting.eFormRentableItemBase.Unit.Tests/Microting.eFormRentableItemBase.Unit.Tests.csproj
-    - name: Notify slack fail
-      if: ${{ failure() }}
-      env:
-        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-      uses: voxmedia/github-action-slack-notify-build@v1
-      with:
-        message_id: ${{ steps.slack.outputs.message_id }}
-        channel_id: C01J0AUCP2A
-        status: FAILED
-        color: danger
