@@ -16,7 +16,7 @@
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.2" />
-        <PackageReference Include="Microting.eForm" Version="8.0.9" />
+        <PackageReference Include="Microting.eForm" Version="8.0.10" />
         <PackageReference Include="Microting.eFormApi.BasePn" Version="8.0.8" />
     </ItemGroup>
 
