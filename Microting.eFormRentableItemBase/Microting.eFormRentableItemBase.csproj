@@ -15,7 +15,7 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
           <PrivateAssets>all</PrivateAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.5" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.6" />
         <PackageReference Include="Microting.eForm" Version="8.0.26" />
         <PackageReference Include="Microting.eFormApi.BasePn" Version="8.0.25" />
     </ItemGroup>
