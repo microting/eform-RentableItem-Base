@@ -36,16 +36,16 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<ContractVersion> versionList = DbContext.ContractVersion.AsNoTracking().ToList();
 
             //Assert
-            Assert.NotNull(dbContract);
+            Assert.That(dbContract, Is.Not.Null);
 
-            Assert.AreEqual(1, contractList.Count);
-            Assert.AreEqual(1, versionList.Count);
+            Assert.That(contractList.Count, Is.EqualTo(1));
+            Assert.That(versionList.Count, Is.EqualTo(1));
 
-            Assert.AreEqual(contract.Status, dbContract.Status);
-            Assert.AreEqual(contract.ContractEnd.ToString(), dbContract.ContractEnd.ToString());
-            Assert.AreEqual(contract.ContractNr, dbContract.ContractNr);
-            Assert.AreEqual(contract.ContractStart.ToString(), dbContract.ContractStart.ToString());
-            Assert.AreEqual(contract.CustomerId, dbContract.CustomerId);
+            Assert.That(dbContract.Status, Is.EqualTo(contract.Status));
+            Assert.That(dbContract.ContractEnd.ToString(), Is.EqualTo(contract.ContractEnd.ToString()));
+            Assert.That(dbContract.ContractNr, Is.EqualTo(contract.ContractNr));
+            Assert.That(dbContract.ContractStart.ToString(), Is.EqualTo(contract.ContractStart.ToString()));
+            Assert.That(dbContract.CustomerId, Is.EqualTo(contract.CustomerId));
         }
 
         [Test]
@@ -79,16 +79,16 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<ContractVersion> versionList = DbContext.ContractVersion.AsNoTracking().ToList();
 
             //Assert
-            Assert.NotNull(dbContract);
+            Assert.That(dbContract, Is.Not.Null);
 
-            Assert.AreEqual(1, contractList.Count);
-            Assert.AreEqual(2, versionList.Count);
+            Assert.That(contractList.Count, Is.EqualTo(1));
+            Assert.That(versionList.Count, Is.EqualTo(2));
 
-            Assert.AreEqual(contract.Status, dbContract.Status);
-            Assert.AreEqual(contract.ContractEnd.ToString(), dbContract.ContractEnd.ToString());
-            Assert.AreEqual(contract.ContractNr, dbContract.ContractNr);
-            Assert.AreEqual(contract.ContractStart.ToString(), dbContract.ContractStart.ToString());
-            Assert.AreEqual(contract.CustomerId, dbContract.CustomerId);
+            Assert.That(dbContract.Status, Is.EqualTo(contract.Status));
+            Assert.That(dbContract.ContractEnd.ToString(), Is.EqualTo(contract.ContractEnd.ToString()));
+            Assert.That(dbContract.ContractNr, Is.EqualTo(contract.ContractNr));
+            Assert.That(dbContract.ContractStart.ToString(), Is.EqualTo(contract.ContractStart.ToString()));
+            Assert.That(dbContract.CustomerId, Is.EqualTo(contract.CustomerId));
         }
 
         [Test]
@@ -116,17 +116,17 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<ContractVersion> versionList = DbContext.ContractVersion.AsNoTracking().ToList();
 
             //Assert
-            Assert.NotNull(dbContract);
+            Assert.That(dbContract, Is.Not.Null);
 
-            Assert.AreEqual(1, contractList.Count);
-            Assert.AreEqual(2, versionList.Count);
+            Assert.That(contractList.Count, Is.EqualTo(1));
+            Assert.That(versionList.Count, Is.EqualTo(2));
 
-            Assert.AreEqual(contract.Status, dbContract.Status);
-            Assert.AreEqual(contract.ContractEnd.ToString(), dbContract.ContractEnd.ToString());
-            Assert.AreEqual(contract.ContractNr, dbContract.ContractNr);
-            Assert.AreEqual(contract.ContractStart.ToString(), dbContract.ContractStart.ToString());
-            Assert.AreEqual(contract.CustomerId, dbContract.CustomerId);
-            Assert.AreEqual(Constants.WorkflowStates.Removed, dbContract.WorkflowState);
+            Assert.That(dbContract.Status, Is.EqualTo(contract.Status));
+            Assert.That(dbContract.ContractEnd.ToString(), Is.EqualTo(contract.ContractEnd.ToString()));
+            Assert.That(dbContract.ContractNr, Is.EqualTo(contract.ContractNr));
+            Assert.That(dbContract.ContractStart.ToString(), Is.EqualTo(contract.ContractStart.ToString()));
+            Assert.That(dbContract.CustomerId, Is.EqualTo(contract.CustomerId));
+            Assert.That(dbContract.WorkflowState, Is.EqualTo(Constants.WorkflowStates.Removed));
         }
     }
 }

@@ -67,15 +67,15 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 await DbContext.ContractInspectionItemVersion.AsNoTracking().ToListAsync();
 
             //Assert
-            Assert.NotNull(dbInspectionItem);
-            Assert.NotNull(inspectionItems);
-            Assert.NotNull(versionList);
+            Assert.That(dbInspectionItem, Is.Not.Null);
+            Assert.That(inspectionItems, Is.Not.Null);
+            Assert.That(versionList, Is.Not.Null);
 
-            Assert.AreEqual(inspectionItem.Status, dbInspectionItem.Status);
-            Assert.AreEqual(inspectionItem.ContractInspectionId, dbInspectionItem.ContractInspectionId);
-            Assert.AreEqual(inspectionItem.RentableItemId, dbInspectionItem.RentableItemId);
-            Assert.AreEqual(inspectionItem.SDKCaseId, dbInspectionItem.SDKCaseId);
-            Assert.AreEqual(inspectionItem.SiteId, dbInspectionItem.SiteId);
+            Assert.That(dbInspectionItem.Status, Is.EqualTo(inspectionItem.Status));
+            Assert.That(dbInspectionItem.ContractInspectionId, Is.EqualTo(inspectionItem.ContractInspectionId));
+            Assert.That(dbInspectionItem.RentableItemId, Is.EqualTo(inspectionItem.RentableItemId));
+            Assert.That(dbInspectionItem.SDKCaseId, Is.EqualTo(inspectionItem.SDKCaseId));
+            Assert.That(dbInspectionItem.SiteId, Is.EqualTo(inspectionItem.SiteId));
         }
 
         [Test]
@@ -163,15 +163,15 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 await DbContext.ContractInspectionItemVersion.AsNoTracking().ToListAsync();
 
             //Assert
-            Assert.NotNull(dbInspectionItem);
-            Assert.NotNull(inspectionItems);
-            Assert.NotNull(versionList);
+            Assert.That(dbInspectionItem, Is.Not.Null);
+            Assert.That(inspectionItems, Is.Not.Null);
+            Assert.That(versionList, Is.Not.Null);
 
-            Assert.AreEqual(inspectionItem.Status, dbInspectionItem.Status);
-            Assert.AreEqual(inspectionItem.ContractInspectionId, dbInspectionItem.ContractInspectionId);
-            Assert.AreEqual(inspectionItem.RentableItemId, dbInspectionItem.RentableItemId);
-            Assert.AreEqual(inspectionItem.SDKCaseId, dbInspectionItem.SDKCaseId);
-            Assert.AreEqual(inspectionItem.SiteId, dbInspectionItem.SiteId);
+            Assert.That(dbInspectionItem.Status, Is.EqualTo(inspectionItem.Status));
+            Assert.That(dbInspectionItem.ContractInspectionId, Is.EqualTo(inspectionItem.ContractInspectionId));
+            Assert.That(dbInspectionItem.RentableItemId, Is.EqualTo(inspectionItem.RentableItemId));
+            Assert.That(dbInspectionItem.SDKCaseId, Is.EqualTo(inspectionItem.SDKCaseId));
+            Assert.That(dbInspectionItem.SiteId, Is.EqualTo(inspectionItem.SiteId));
         }
 
         [Test]
@@ -230,16 +230,16 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
                 await DbContext.ContractInspectionItemVersion.AsNoTracking().ToListAsync();
 
             //Assert
-            Assert.NotNull(dbInspectionItem);
-            Assert.NotNull(inspectionItems);
-            Assert.NotNull(versionList);
+            Assert.That(dbInspectionItem, Is.Not.Null);
+            Assert.That(inspectionItems, Is.Not.Null);
+            Assert.That(versionList, Is.Not.Null);
 
-            Assert.AreEqual(inspectionItem.Status, dbInspectionItem.Status);
-            Assert.AreEqual(inspectionItem.ContractInspectionId, dbInspectionItem.ContractInspectionId);
-            Assert.AreEqual(inspectionItem.RentableItemId, dbInspectionItem.RentableItemId);
-            Assert.AreEqual(inspectionItem.SDKCaseId, dbInspectionItem.SDKCaseId);
-            Assert.AreEqual(inspectionItem.SiteId, dbInspectionItem.SiteId);
-            Assert.AreEqual(inspectionItem.WorkflowState, Constants.WorkflowStates.Removed);
+            Assert.That(dbInspectionItem.Status, Is.EqualTo(inspectionItem.Status));
+            Assert.That(dbInspectionItem.ContractInspectionId, Is.EqualTo(inspectionItem.ContractInspectionId));
+            Assert.That(dbInspectionItem.RentableItemId, Is.EqualTo(inspectionItem.RentableItemId));
+            Assert.That(dbInspectionItem.SDKCaseId, Is.EqualTo(inspectionItem.SDKCaseId));
+            Assert.That(dbInspectionItem.SiteId, Is.EqualTo(inspectionItem.SiteId));
+            Assert.That(Constants.WorkflowStates.Removed, Is.EqualTo(inspectionItem.WorkflowState));
         }
     }
 }

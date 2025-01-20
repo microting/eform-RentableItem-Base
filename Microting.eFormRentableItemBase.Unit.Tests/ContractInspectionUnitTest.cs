@@ -43,15 +43,15 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<ContractInspectionVersion> versionList = DbContext.ContractInspectionVersion.AsNoTracking().ToList();
             //Assert
 
-            Assert.NotNull(dbContractInspection);
+            Assert.That(dbContractInspection, Is.Not.Null);
 
-            Assert.AreEqual(1, inspectionList.Count());
+            Assert.That(inspectionList.Count(), Is.EqualTo(1));
 
-            Assert.AreEqual(1, versionList.Count());
+            Assert.That(versionList.Count(), Is.EqualTo(1));
 
-            Assert.AreEqual(contractInspection.ContractId, dbContractInspection.ContractId);
-            Assert.AreEqual(contractInspection.DoneAt.ToString(), dbContractInspection.DoneAt.ToString());
-            Assert.AreEqual(contractInspection.WorkflowState, dbContractInspection.WorkflowState);
+            Assert.That(dbContractInspection.ContractId, Is.EqualTo(contractInspection.ContractId));
+            Assert.That(dbContractInspection.DoneAt.ToString(), Is.EqualTo(contractInspection.DoneAt.ToString()));
+            Assert.That(dbContractInspection.WorkflowState, Is.EqualTo(contractInspection.WorkflowState));
         }
 
         [Test]
@@ -101,16 +101,16 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<ContractInspectionVersion> versionList = DbContext.ContractInspectionVersion.AsNoTracking().ToList();
             //Assert
 
-            Assert.NotNull(dbContractInspection);
+            Assert.That(dbContractInspection, Is.Not.Null);
 
-            Assert.AreEqual(1, inspectionList.Count());
+            Assert.That(inspectionList.Count(), Is.EqualTo(1));
 
-            Assert.AreEqual(2, versionList.Count());
+            Assert.That(versionList.Count(), Is.EqualTo(2));
 
-            Assert.AreEqual(contractInspection.ContractId, dbContractInspection.ContractId);
+            Assert.That(dbContractInspection.ContractId, Is.EqualTo(contractInspection.ContractId));
 
-            Assert.AreEqual(contractInspection.DoneAt.ToString(), dbContractInspection.DoneAt.ToString());
-            Assert.AreEqual(contractInspection.WorkflowState, dbContractInspection.WorkflowState);
+            Assert.That(dbContractInspection.DoneAt.ToString(), Is.EqualTo(contractInspection.DoneAt.ToString()));
+            Assert.That(dbContractInspection.WorkflowState, Is.EqualTo(contractInspection.WorkflowState));
         }
 
         [Test]
@@ -147,16 +147,16 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<ContractInspectionVersion> versionList = DbContext.ContractInspectionVersion.AsNoTracking().ToList();
             //Assert
 
-            Assert.NotNull(dbContractInspection);
+            Assert.That(dbContractInspection, Is.Not.Null);
 
-            Assert.AreEqual(1, inspectionList.Count());
+            Assert.That(inspectionList.Count(), Is.EqualTo(1));
 
-            Assert.AreEqual(2, versionList.Count());
+            Assert.That(versionList.Count(), Is.EqualTo(2));
 
-            Assert.AreEqual(contractInspection.ContractId, dbContractInspection.ContractId);
+            Assert.That(dbContractInspection.ContractId, Is.EqualTo(contractInspection.ContractId));
 
-            Assert.AreEqual(contractInspection.DoneAt.ToString(), dbContractInspection.DoneAt.ToString());
-            Assert.AreEqual(Constants.WorkflowStates.Removed, dbContractInspection.WorkflowState);
+            Assert.That(dbContractInspection.DoneAt.ToString(), Is.EqualTo(contractInspection.DoneAt.ToString()));
+            Assert.That(dbContractInspection.WorkflowState, Is.EqualTo(Constants.WorkflowStates.Removed));
         }
     }
 }

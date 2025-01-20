@@ -32,19 +32,19 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<RentableItem> itemList = DbContext.RentableItem.AsNoTracking().ToList();
             List<RentableItemVersion> versionList = DbContext.RentableItemsVersion.AsNoTracking().ToList();
             // Assert
-            Assert.NotNull(rentableItem);
+            Assert.That(rentableItem, Is.Not.Null);
 
-            Assert.AreEqual(1, itemList.Count());
+            Assert.That(itemList.Count(), Is.EqualTo(1));
 
-            Assert.AreEqual(1, versionList.Count());
+            Assert.That(versionList.Count(), Is.EqualTo(1));
 
-            Assert.AreEqual(rentableItem.Brand, dbRentableItem.Brand);
-            Assert.AreEqual(rentableItem.ModelName, dbRentableItem.ModelName);
-            Assert.AreEqual(rentableItem.PlateNumber, dbRentableItem.PlateNumber);
-            Assert.AreEqual(rentableItem.VinNumber, dbRentableItem.VinNumber);
-            Assert.AreEqual(rentableItem.SerialNumber, dbRentableItem.SerialNumber);
-            Assert.AreEqual(rentableItem.RegistrationDate.ToString(), dbRentableItem.RegistrationDate.ToString());
-            Assert.AreEqual(rentableItem.WorkflowState, dbRentableItem.WorkflowState);
+            Assert.That(dbRentableItem.Brand, Is.EqualTo(rentableItem.Brand));
+            Assert.That(dbRentableItem.ModelName, Is.EqualTo(rentableItem.ModelName));
+            Assert.That(dbRentableItem.PlateNumber, Is.EqualTo(rentableItem.PlateNumber));
+            Assert.That(dbRentableItem.VinNumber, Is.EqualTo(rentableItem.VinNumber));
+            Assert.That(dbRentableItem.SerialNumber, Is.EqualTo(rentableItem.SerialNumber));
+            Assert.That(dbRentableItem.RegistrationDate.ToString(), Is.EqualTo(rentableItem.RegistrationDate.ToString()));
+            Assert.That(dbRentableItem.WorkflowState, Is.EqualTo(rentableItem.WorkflowState));
         }
 
         [Test]
@@ -75,19 +75,19 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<RentableItem> itemList = DbContext.RentableItem.AsNoTracking().ToList();
             List<RentableItemVersion> versionList = DbContext.RentableItemsVersion.AsNoTracking().ToList();
             // Assert
-            Assert.NotNull(rentableItem);
+            Assert.That(rentableItem, Is.Not.Null);
 
-            Assert.AreEqual(1, itemList.Count());
+            Assert.That(itemList.Count(), Is.EqualTo(1));
 
-            Assert.AreEqual(2, versionList.Count());
+            Assert.That(versionList.Count(), Is.EqualTo(2));
 
-            Assert.AreEqual(rentableItem.Brand, dbRentableItem.Brand);
-            Assert.AreEqual(rentableItem.ModelName, dbRentableItem.ModelName);
-            Assert.AreEqual(rentableItem.PlateNumber, dbRentableItem.PlateNumber);
-            Assert.AreEqual(rentableItem.VinNumber, dbRentableItem.VinNumber);
-            Assert.AreEqual(rentableItem.SerialNumber, dbRentableItem.SerialNumber);
-            Assert.AreEqual(rentableItem.RegistrationDate.ToString(), dbRentableItem.RegistrationDate.ToString());
-            Assert.AreEqual(rentableItem.WorkflowState, dbRentableItem.WorkflowState);
+            Assert.That(dbRentableItem.Brand, Is.EqualTo(rentableItem.Brand));
+            Assert.That(dbRentableItem.ModelName, Is.EqualTo(rentableItem.ModelName));
+            Assert.That(dbRentableItem.PlateNumber, Is.EqualTo(rentableItem.PlateNumber));
+            Assert.That(dbRentableItem.VinNumber, Is.EqualTo(rentableItem.VinNumber));
+            Assert.That(dbRentableItem.SerialNumber, Is.EqualTo(rentableItem.SerialNumber));
+            Assert.That(dbRentableItem.RegistrationDate.ToString(), Is.EqualTo(rentableItem.RegistrationDate.ToString()));
+            Assert.That(dbRentableItem.WorkflowState, Is.EqualTo(rentableItem.WorkflowState));
         }
 
         [Test]
@@ -111,19 +111,19 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<RentableItem> itemList = DbContext.RentableItem.AsNoTracking().ToList();
             List<RentableItemVersion> versionList = DbContext.RentableItemsVersion.AsNoTracking().ToList();
             // Assert
-            Assert.NotNull(rentableItem);
+            Assert.That(rentableItem, Is.Not.Null);
 
-            Assert.AreEqual(1, itemList.Count());
+            Assert.That(itemList.Count(), Is.EqualTo(1));
 
-            Assert.AreEqual(2, versionList.Count());
+            Assert.That(versionList.Count(), Is.EqualTo(2));
 
-            Assert.AreEqual(rentableItem.Brand, dbRentableItem.Brand);
-            Assert.AreEqual(rentableItem.ModelName, dbRentableItem.ModelName);
-            Assert.AreEqual(rentableItem.PlateNumber, dbRentableItem.PlateNumber);
-            Assert.AreEqual(rentableItem.VinNumber, dbRentableItem.VinNumber);
-            Assert.AreEqual(rentableItem.SerialNumber, dbRentableItem.SerialNumber);
-            Assert.AreEqual(rentableItem.RegistrationDate.ToString(), dbRentableItem.RegistrationDate.ToString());
-            Assert.AreEqual(Constants.WorkflowStates.Removed, dbRentableItem.WorkflowState);   
+            Assert.That(dbRentableItem.Brand, Is.EqualTo(rentableItem.Brand));
+            Assert.That(dbRentableItem.ModelName, Is.EqualTo(rentableItem.ModelName));
+            Assert.That(dbRentableItem.PlateNumber, Is.EqualTo(rentableItem.PlateNumber));
+            Assert.That(dbRentableItem.VinNumber, Is.EqualTo(rentableItem.VinNumber));
+            Assert.That(dbRentableItem.SerialNumber, Is.EqualTo(rentableItem.SerialNumber));
+            Assert.That(dbRentableItem.RegistrationDate.ToString(), Is.EqualTo(rentableItem.RegistrationDate.ToString()));
+            Assert.That(dbRentableItem.WorkflowState, Is.EqualTo(Constants.WorkflowStates.Removed));   
         }
     }
 }

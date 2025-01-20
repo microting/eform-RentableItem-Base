@@ -53,13 +53,13 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<ContractRentableItemVersion> versionList =
                 DbContext.ContractRentableItemVersion.AsNoTracking().ToList();
             //Assert
-            Assert.NotNull(dbContractRentableItem);
+            Assert.That(dbContractRentableItem, Is.Not.Null);
 
-            Assert.AreEqual(1, contractRentableItems.Count);
-            Assert.AreEqual(1, versionList.Count);
+            Assert.That(contractRentableItems.Count, Is.EqualTo(1));
+            Assert.That(versionList.Count, Is.EqualTo(1));
 
-            Assert.AreEqual(contractRentableItem.ContractId, dbContractRentableItem.ContractId);
-            Assert.AreEqual(contractRentableItem.RentableItemId, dbContractRentableItem.RentableItemId);
+            Assert.That(dbContractRentableItem.ContractId, Is.EqualTo(contractRentableItem.ContractId));
+            Assert.That(dbContractRentableItem.RentableItemId, Is.EqualTo(contractRentableItem.RentableItemId));
         }
 
         [Test]
@@ -115,13 +115,13 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<ContractRentableItemVersion> versionList =
                 DbContext.ContractRentableItemVersion.AsNoTracking().ToList();
             //Assert
-            Assert.NotNull(dbContractRentableItem);
+            Assert.That(dbContractRentableItem, Is.Not.Null);
 
-            Assert.AreEqual(1, contractRentableItems.Count);
-            Assert.AreEqual(2, versionList.Count);
+            Assert.That(contractRentableItems.Count, Is.EqualTo(1));
+            Assert.That(versionList.Count, Is.EqualTo(2));
 
-            Assert.AreEqual(contractRentableItem.ContractId, dbContractRentableItem.ContractId);
-            Assert.AreEqual(contractRentableItem.RentableItemId, dbContractRentableItem.RentableItemId);
+            Assert.That(dbContractRentableItem.ContractId, Is.EqualTo(contractRentableItem.ContractId));
+            Assert.That(dbContractRentableItem.RentableItemId, Is.EqualTo(contractRentableItem.RentableItemId));
         }
         [Test]
         public async Task ContractRentableItem_Update_DoesUpdate_OnlyRentableItemID()
@@ -177,13 +177,13 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<ContractRentableItemVersion> versionList =
                 DbContext.ContractRentableItemVersion.AsNoTracking().ToList();
             //Assert
-            Assert.NotNull(dbContractRentableItem);
+            Assert.That(dbContractRentableItem, Is.Not.Null);
 
-            Assert.AreEqual(1, contractRentableItems.Count);
-            Assert.AreEqual(2, versionList.Count);
+            Assert.That(contractRentableItems.Count, Is.EqualTo(1));
+            Assert.That(versionList.Count, Is.EqualTo(2));
 
-            Assert.AreEqual(contractRentableItem.ContractId, dbContractRentableItem.ContractId);
-            Assert.AreEqual(contractRentableItem.RentableItemId, dbContractRentableItem.RentableItemId);
+            Assert.That(dbContractRentableItem.ContractId, Is.EqualTo(contractRentableItem.ContractId));
+            Assert.That(dbContractRentableItem.RentableItemId, Is.EqualTo(contractRentableItem.RentableItemId));
         }
          [Test]
         public async Task ContractRentableItem_Update_DoesUpdate()
@@ -248,13 +248,13 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<ContractRentableItemVersion> versionList =
                 DbContext.ContractRentableItemVersion.AsNoTracking().ToList();
             //Assert
-            Assert.NotNull(dbContractRentableItem);
+            Assert.That(dbContractRentableItem, Is.Not.Null);
 
-            Assert.AreEqual(1, contractRentableItems.Count);
-            Assert.AreEqual(2, versionList.Count);
+            Assert.That(contractRentableItems.Count, Is.EqualTo(1));
+            Assert.That(versionList.Count, Is.EqualTo(2));
 
-            Assert.AreEqual(contractRentableItem.ContractId, dbContractRentableItem.ContractId);
-            Assert.AreEqual(contractRentableItem.RentableItemId, dbContractRentableItem.RentableItemId);
+            Assert.That(dbContractRentableItem.ContractId, Is.EqualTo(contractRentableItem.ContractId));
+            Assert.That(dbContractRentableItem.RentableItemId, Is.EqualTo(contractRentableItem.RentableItemId));
         }
 
         [Test]
@@ -300,14 +300,14 @@ namespace Microting.eFormRentableItemBase.Unit.Tests
             List<ContractRentableItemVersion> versionList =
                 DbContext.ContractRentableItemVersion.AsNoTracking().ToList();
             //Assert
-            Assert.NotNull(dbContractRentableItem);
+            Assert.That(dbContractRentableItem, Is.Not.Null);
 
-            Assert.AreEqual(1, contractRentableItems.Count);
-            Assert.AreEqual(2, versionList.Count);
+            Assert.That(contractRentableItems.Count, Is.EqualTo(1));
+            Assert.That(versionList.Count, Is.EqualTo(2));
 
-            Assert.AreEqual(contractRentableItem.ContractId, dbContractRentableItem.ContractId);
-            Assert.AreEqual(contractRentableItem.RentableItemId, dbContractRentableItem.RentableItemId);
-            Assert.AreEqual(Constants.WorkflowStates.Removed, dbContractRentableItem.WorkflowState);
+            Assert.That(dbContractRentableItem.ContractId, Is.EqualTo(contractRentableItem.ContractId));
+            Assert.That(dbContractRentableItem.RentableItemId, Is.EqualTo(contractRentableItem.RentableItemId));
+            Assert.That(dbContractRentableItem.WorkflowState, Is.EqualTo(Constants.WorkflowStates.Removed));
         }
     }
 }
