@@ -22,7 +22,7 @@ using System;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using Microting.EntityFrameworkCore.MySql.Infrastructure;
 
 namespace Microting.eFormRentableItemBase.Infrastructure.Data.Factories
 {

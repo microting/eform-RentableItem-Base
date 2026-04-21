@@ -12,7 +12,7 @@ namespace Microting.eFormRentableItemBase.Migrations
             object autoIDGenStrategyValue= MySqlValueGenerationStrategy.IdentityColumn;
 
             // Setup for MySQL Provider
-            if (migrationBuilder.ActiveProvider=="Pomelo.EntityFrameworkCore.MySql")
+            if (migrationBuilder.ActiveProvider=="Microting.EntityFrameworkCore.MySql")
             {
                 DbConfig.IsMySQL = true;
                 autoIDGenStrategy = "MySql:ValueGenerationStrategy";
