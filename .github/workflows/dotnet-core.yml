@@ -11,6 +11,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
     - uses: actions/checkout@v2
     - name: Start MariaDB
@@ -38,5 +41,10 @@ jobs:
       run: dotnet test --no-restore -c Release -v n Microting.eFormRentableItemBase.Unit.Tests/Microting.eFormRentableItemBase.Unit.Tests.csproj
     - name: Pack
       run: dotnet pack Microting.eFormRentableItemBase.sln -c Release -o ./artifacts -p:PackageVersion=${{ steps.get_version.outputs.VERSION }}
+    - name: NuGet login (OIDC trusted publishing)
+      uses: NuGet/login@v1
+      id: nuget-login
+      with:
+        user: microtingas
     - name: Push generated package to GitHub registry
-      run: dotnet nuget push /home/runner/work/eform-RentableItem-Base/eform-RentableItem-Base/artifacts/Microting.eFormRentableItemBase.${{ steps.get_version.outputs.VERSION }}.nupkg -k ${{secrets.NUGET_SECRET_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols
+      run: dotnet nuget push /home/runner/work/eform-RentableItem-Base/eform-RentableItem-Base/artifacts/Microting.eFormRentableItemBase.${{ steps.get_version.outputs.VERSION }}.nupkg -k ${{ steps.nuget-login.outputs.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols
